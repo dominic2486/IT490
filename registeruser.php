@@ -98,12 +98,12 @@ if (isset($_POST["submit"])) {
         } */
         $connection = new AMQPStreamConnection($brokerhost, $brokerport, $brokeruser, $brokerpass);
         $channel = $connection->channel();
-        $channel->queue_declare('reg_queue', false, false, false, false);
+        $channel->queue_declare('testQueue', false, false, false, false);
     
 
         $messageBody = json_encode($reg_arr);
         $message = new AMQPMessage($messageBody);
-        $channel->basic_publish($message, '', 'reg_queue');
+        $channel->basic_publish($message, '', 'testQueue');
 
         $channel->close();
         $connection->close();

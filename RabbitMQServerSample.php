@@ -16,6 +16,7 @@ function request_processor($req){
 		return "Error: unsupported message type";
 	}
 	//Handle message type
+	echo json_decode($req);
 	$type = $req['type'];
 	switch($type){
 		case "login":
@@ -24,6 +25,8 @@ function request_processor($req){
 			return validate($req['session_id']);
 		case "echo":
 			return array("return_code"=>'0', "message"=>"Echo: " .$req["message"]);
+		default:
+			return array("return_code"=>'1', "data"=>"Quiz Data: " . json_encode($req));
 	}
 	return array("return_code" => '0',
 		"message" => "Server received request and processed it");

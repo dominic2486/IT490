@@ -44,7 +44,7 @@
 
     <?php
 require_once(__DIR__ . "/lib/helpers.php");
-require_once(__DIR__ . "flash.php"); 
+require_once(__DIR__ . "/lib/flash.php"); 
 if(!is_logged_in()){
     flash('<p> user must sign in first.</p>');
     header('Location:index.php');

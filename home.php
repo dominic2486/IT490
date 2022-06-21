@@ -46,7 +46,7 @@
 require_once(__DIR__ . "/lib/helpers.php");
 require_once(__DIR__ . "/lib/flash.php"); 
 if(!is_logged_in()){
-    flash('<p> user must sign in first.</p>');
+    flash("user must sign in first.");
     header('Location:index.php');
 }
 echo '<p>Welcome ' . get_user_fullname() . '</p>';

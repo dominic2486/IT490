@@ -44,10 +44,9 @@
 
     <?php
 require_once(__DIR__ . "/lib/helpers.php");
+require_once(__DIR__ . "flash.php"); 
 if(!is_logged_in()){
-    session_unset();
-    session_destroy();
-    echo '<p> user must sign in first.</p>';
+    flash('<p> user must sign in first.</p>');
     header('Location:index.php');
 }
 echo '<p>Welcome ' . get_user_fullname() . '</p>';

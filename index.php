@@ -53,4 +53,4 @@
 
 </body>
 </html>
-<?php require_once(__DIR__ . "flash.php"); ?>
+<?php require_once(__DIR__ . "/lib/flash.php"); ?>
